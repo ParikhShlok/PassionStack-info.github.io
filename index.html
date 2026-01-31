@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PassionStack - Education for All, Powered by Student Knowledge</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>PassionStack - Transforming Student Learning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1A3A52;
-            --accent: #E07A5F;
-            --accent-2: #81B29A;
-            --bg-light: #F8F9FA;
-            --bg-dark: #F1F3F5;
-            --text: #212529;
-            --text-muted: #6C757D;
-            --border: #DEE2E6;
+            --deep-navy: #0A1628;
+            --rich-blue: #1E3A5F;
+            --warm-coral: #FF6B6B;
+            --soft-gold: #FFD93D;
+            --sage: #6BCB77;
+            --cream: #FFF8F0;
+            --off-white: #F8F9FA;
+            --charcoal: #2D3142;
         }
 
         * {
@@ -23,561 +23,22 @@
             box-sizing: border-box;
         }
 
+        ::selection {
+            background: var(--warm-coral);
+            color: white;
+        }
+
         body {
-            font-family: 'IBM Plex Sans', sans-serif;
-            background: var(--bg-light);
-            color: var(--text);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Hero Section - Bold Asymmetric */
-        .hero {
-            min-height: 100vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background: var(--primary);
-            position: relative;
-            overflow: hidden;
-            margin-top: 70px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
-            background: var(--accent);
-            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0% 100%);
-            opacity: 0.1;
-        }
-
-        .hero-left {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 4rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-right {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--accent);
-            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
-            padding: 4rem;
-        }
-
-        .hero h1 {
-            font-family: 'DM Serif Display', serif;
-            font-size: 6rem;
-            color: white;
-            line-height: 0.95;
-            margin-bottom: 2rem;
-            letter-spacing: -0.03em;
-            opacity: 0;
-            transform: translateX(-50px);
-            animation: slideInLeft 1s ease forwards;
-        }
-
-        @keyframes slideInLeft {
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .hero .tagline {
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 500px;
-            line-height: 1.5;
-            opacity: 0;
-            animation: fadeIn 1s ease 0.3s forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 3rem;
-            margin-top: 3rem;
-            opacity: 0;
-            animation: fadeIn 1s ease 0.6s forwards;
-        }
-
-        .stat {
-            border-left: 4px solid var(--accent);
-            padding-left: 1rem;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: white;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-top: 0.5rem;
-        }
-
-        .hero-mission {
-            color: var(--primary);
-            font-size: 1.6rem;
-            line-height: 1.4;
-            font-weight: 500;
-            max-width: 450px;
-        }
-
-        /* Section Base */
-        section {
-            padding: 7rem 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-header {
-            margin-bottom: 4rem;
-        }
-
-        .section-number {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 1rem;
-        }
-
-        .section-title {
-            font-family: 'DM Serif Display', serif;
-            font-size: 3.5rem;
-            color: var(--text);
-            line-height: 1.1;
-            max-width: 800px;
-        }
-
-        /* Founder Story - Magazine Layout */
-        .founder {
-            background: white;
-        }
-
-        .story-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .story-image {
-            position: sticky;
-            top: 2rem;
-            background: var(--bg-dark);
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            border: 1px solid var(--border);
-        }
-
-        .story-content p {
-            font-size: 1.1rem;
-            line-height: 1.9;
-            margin-bottom: 1.8rem;
-            color: var(--text);
-        }
-
-        .story-content p:first-child {
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--primary);
-        }
-
-        .pullquote {
-            border-left: 6px solid var(--accent);
-            padding-left: 2rem;
-            margin: 2.5rem 0;
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.5rem;
-            line-height: 1.4;
-            color: var(--primary);
-            font-style: italic;
-        }
-
-        /* Problems - Bold Grid */
-        .problems {
-            background: var(--primary);
-            color: white;
-        }
-
-        .problems .section-title {
-            color: white;
-        }
-
-        .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .problem-item {
-            background: var(--primary);
-            padding: 3rem 2rem;
-            transition: background 0.3s ease;
-        }
-
-        .problem-item:hover {
-            background: rgba(224, 122, 95, 0.2);
-        }
-
-        .problem-number {
-            font-family: 'DM Serif Display', serif;
-            font-size: 3rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            line-height: 1;
-        }
-
-        .problem-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .problem-item p {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.7;
-        }
-
-        /* Solution - Split Layout */
-        .solution {
-            background: var(--bg-light);
-        }
-
-        .solution-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .solution-visual {
-            background: var(--accent-2);
-            height: 600px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 5rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .solution-visual::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-        }
-
-        .solution-list {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .solution-card {
-            background: white;
-            padding: 2rem;
-            border-left: 5px solid var(--accent);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .solution-card:hover {
-            transform: translateX(10px);
-            box-shadow: -10px 10px 0 rgba(224, 122, 95, 0.2);
-        }
-
-        .solution-card h3 {
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-        }
-
-        .solution-card p {
-            color: var(--text-muted);
-            line-height: 1.8;
-        }
-
-        /* Features - Brutalist Cards */
-        .features {
-            background: var(--bg-dark);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-
-        .feature-box {
-            background: white;
-            padding: 0;
-            border: 3px solid var(--text);
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-box:hover {
-            transform: translate(-5px, -5px);
-            box-shadow: 5px 5px 0 var(--accent);
-        }
-
-        .feature-header {
-            background: var(--text);
-            color: white;
-            padding: 1.5rem;
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.5rem;
-        }
-
-        .feature-body {
-            padding: 2rem 1.5rem;
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        /* Status - Timeline */
-        .status {
-            background: white;
-        }
-
-        .status-timeline {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .status-timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: var(--accent);
-        }
-
-        .status-milestone {
-            position: relative;
-            margin-bottom: 3rem;
-            padding-left: 2rem;
-        }
-
-        .status-milestone::before {
-            content: '';
-            position: absolute;
-            left: -3rem;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background: var(--accent);
-            border: 4px solid white;
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px var(--bg-light);
-        }
-
-        .status-milestone h3 {
-            font-size: 1.4rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        .status-milestone p {
-            color: var(--text-muted);
-            line-height: 1.7;
-        }
-
-        /* Demo - Bold CTA */
-        .demo {
-            background: var(--accent-2);
-            text-align: center;
-        }
-
-        .demo .section-title {
-            color: white;
-        }
-
-        .demo-container {
-            max-width: 700px;
-            margin: 3rem auto 0;
-            background: white;
-            padding: 5rem 3rem;
-            border: 4px solid var(--primary);
-            position: relative;
-        }
-
-        .demo-container::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: 10px;
-            bottom: 10px;
-            border: 4px solid rgba(26, 58, 82, 0.3);
-            z-index: -1;
-        }
-
-        .demo-container h3 {
-            font-family: 'DM Serif Display', serif;
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .demo-container p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-        }
-
-        /* Contact - Dark Bold */
-        .contact {
-            background: var(--text);
-            color: white;
-            padding: 7rem 0 5rem;
-        }
-
-        .contact .section-number {
-            color: var(--accent);
-        }
-
-        .contact .section-title {
-            color: white;
-        }
-
-        .contact-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-
-        .contact-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2.5rem 2rem;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            transition: border-color 0.3s ease;
-        }
-
-        .contact-box:hover {
-            border-color: var(--accent);
-        }
-
-        .contact-label {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-
-        .contact-value {
-            font-size: 1.2rem;
-            color: white;
-            word-break: break-word;
-        }
-
-        .contact-value a {
-            color: white;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s ease;
-        }
-
-        .contact-value a:hover {
-            border-color: var(--accent);
-        }
-
-        .qr-section {
-            grid-column: 1 / -1;
-            text-align: center;
-            margin-top: 2rem;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .qr-wrapper {
-            display: inline-block;
-            background: white;
-            padding: 2rem;
-            border: 3px solid var(--accent);
-        }
-
-        .qr-code {
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary), var(--accent-2));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.95rem;
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .qr-caption {
-            margin-top: 1.5rem;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .closing {
-            text-align: center;
-            margin-top: 4rem;
-            font-family: 'DM Serif Display', serif;
-            font-size: 2rem;
-            color: var(--accent);
-        }
-
-        /* Animations */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-
-        .scroll-reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
         }
 
         /* Navigation */
@@ -586,212 +47,959 @@
             top: 0;
             left: 0;
             right: 0;
-            background: var(--text);
             z-index: 1000;
-            border-bottom: 3px solid var(--accent);
-            transition: transform 0.3s ease;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        nav.hidden {
-            transform: translateY(-100%);
+        nav.scrolled {
+            background: rgba(10, 22, 40, 0.98);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
 
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 1.2rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
         }
 
         .nav-logo {
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: white;
             text-decoration: none;
             letter-spacing: -0.02em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 3rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: color 0.3s ease;
             position: relative;
         }
 
-        .nav-links a::after {
+        .nav-logo::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -2px;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--accent);
-            transition: width 0.3s ease;
+            background: var(--warm-coral);
+            transition: width 0.4s ease;
         }
 
-        .nav-links a:hover {
-            color: white;
-        }
-
-        .nav-links a:hover::after {
+        .nav-logo:hover::after {
             width: 100%;
         }
 
-        .nav-links a.active {
-            color: var(--accent);
-        }
-
         .nav-cta {
-            background: var(--accent);
-            color: white !important;
-            padding: 0.7rem 1.5rem;
-            border: 2px solid var(--accent);
-            transition: background 0.3s ease, color 0.3s ease;
-        }
-
-        .nav-cta::after {
-            display: none;
+            background: linear-gradient(135deg, var(--warm-coral), var(--soft-gold));
+            color: white;
+            padding: 0.9rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
         }
 
         .nav-cta:hover {
-            background: transparent;
-            color: var(--accent) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
         }
 
-        .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--deep-navy) 0%, var(--rich-blue) 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 2rem 4rem;
         }
 
-        .mobile-toggle span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            transition: all 0.3s ease;
+        /* Animated background elements */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
         }
 
-        .mobile-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(7px, 7px);
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(107, 203, 119, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 15s ease-in-out infinite reverse;
         }
 
-        .mobile-toggle.active span:nth-child(2) {
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(30px, -30px) rotate(5deg); }
+            50% { transform: translate(-20px, 20px) rotate(-5deg); }
+            75% { transform: translate(20px, 30px) rotate(3deg); }
+        }
+
+        /* Geometric decorations */
+        .geometric-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            animation: rotate 30s linear infinite;
+        }
+
+        .shape:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 5%;
+            animation-duration: 25s;
+        }
+
+        .shape:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-duration: 35s;
+            animation-direction: reverse;
+        }
+
+        .shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 15%;
+            left: 15%;
+            animation-duration: 20s;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 107, 107, 0.15);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            color: var(--warm-coral);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
             opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
 
-        .mobile-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 6.5rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.03em;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--warm-coral), var(--soft-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .tagline {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+        }
+
+        .hero .description {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            from {
+                transform: translateY(30px);
+            }
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 4rem;
+            justify-content: center;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.8s forwards;
+        }
+
+        .stat-item {
+            text-align: center;
+            position: relative;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--warm-coral), var(--soft-gold));
+            border-radius: 10px;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 500;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 1s forwards, bounce 2s ease-in-out 2s infinite;
+        }
+
+        .scroll-indicator::before {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .scroll-indicator::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+            animation: scrollDot 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollDot {
+            0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+            50% { transform: translateX(-50%) translateY(20px); opacity: 0.3; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Section styling */
+        section {
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--warm-coral);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-label::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--warm-coral), var(--soft-gold));
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--deep-navy);
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--charcoal);
+            opacity: 0.7;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Vision Section */
+        .vision {
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.03), rgba(255, 217, 61, 0.03));
+            clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .vision-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .vision-card {
+            background: linear-gradient(135deg, var(--deep-navy), var(--rich-blue));
+            padding: 4rem 3rem;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(10, 22, 40, 0.2);
+        }
+
+        .vision-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 107, 107, 0.1), transparent);
+            border-radius: 50%;
+        }
+
+        .vision-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .vision-card p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.9;
+            position: relative;
+        }
+
+        .vision-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .vision-feature {
+            text-align: center;
+            padding: 2rem;
+            background: var(--off-white);
+            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+        }
+
+        .vision-feature:hover {
+            transform: translateY(-8px);
+            border-color: var(--warm-coral);
+            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.15);
+        }
+
+        .vision-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--warm-coral), var(--soft-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .vision-feature h4 {
+            font-size: 1.2rem;
+            color: var(--deep-navy);
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .vision-feature p {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Problem Solution */
+        .problem-solution {
+            background: var(--cream);
+        }
+
+        .ps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .ps-card {
+            background: white;
+            padding: 3.5rem 3rem;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+        }
+
+        .ps-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--warm-coral), var(--soft-gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .ps-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .ps-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(10, 22, 40, 0.1);
+            border-color: var(--warm-coral);
+        }
+
+        .ps-card.solution::before {
+            background: linear-gradient(90deg, var(--sage), var(--soft-gold));
+        }
+
+        .ps-card.solution:hover {
+            border-color: var(--sage);
+        }
+
+        .ps-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--warm-coral);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            background: rgba(255, 107, 107, 0.1);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .ps-card.solution .ps-label {
+            color: var(--sage);
+            background: rgba(107, 203, 119, 0.1);
+        }
+
+        .ps-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--deep-navy);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .ps-card p {
+            font-size: 1.05rem;
+            color: var(--charcoal);
+            line-height: 1.8;
+            opacity: 0.85;
+        }
+
+        /* Impact Section */
+        .impact {
+            background: linear-gradient(135deg, var(--deep-navy) 0%, #1a2942 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 107, 107, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(107, 203, 119, 0.06) 0%, transparent 50%);
+        }
+
+        .impact .section-label {
+            color: var(--soft-gold);
+        }
+
+        .impact .section-title {
+            color: white;
+        }
+
+        .impact .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .impact-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .impact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 217, 61, 0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .impact-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 107, 107, 0.5);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .impact-card:hover::before {
+            opacity: 1;
+        }
+
+        .impact-icon {
+            font-size: 3.5rem;
+            display: block;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .impact-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .impact-card p {
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Journey Section */
+        .journey {
+            background: white;
+        }
+
+        .journey-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .journey-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            line-height: 1.6;
+            color: var(--deep-navy);
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            font-style: italic;
+        }
+
+        .journey-quote::before {
+            content: '"';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 120px;
+            color: var(--warm-coral);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .journey-text {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--charcoal);
+            margin-bottom: 2rem;
+            opacity: 0.85;
+        }
+
+        .journey-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, var(--sage), var(--soft-gold));
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            box-shadow: 0 10px 30px rgba(107, 203, 119, 0.3);
+        }
+
+        .journey-status::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--warm-coral) 0%, var(--soft-gold) 100%);
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+            border-radius: 50%;
+            animation: float 15s ease-in-out infinite;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            padding: 1.3rem 3.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--deep-navy);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--deep-navy);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+        }
+
+        footer .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        footer .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--warm-coral);
+        }
+
+        .footer-divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--warm-coral), var(--soft-gold));
+            margin: 2rem auto;
+        }
+
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Responsive */
         @media (max-width: 968px) {
-            .mobile-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: var(--text);
-                flex-direction: column;
-                gap: 0;
-                padding: 2rem;
-                border-bottom: 3px solid var(--accent);
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-            }
-
-            .nav-links.active {
-                transform: translateX(0);
-            }
-
-            .nav-links li {
-                width: 100%;
-                text-align: center;
-                padding: 1rem 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .nav-links a::after {
-                display: none;
-            }
-
-            .nav-cta {
-                display: inline-block;
-            }
-            .hero {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-right {
-                clip-path: none;
-                padding: 3rem 2rem;
-            }
-
             .hero h1 {
                 font-size: 4rem;
-            }
-
-            .story-layout,
-            .solution-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .story-image {
-                position: static;
-                height: 300px;
-            }
-
-            .problems-grid {
-                grid-template-columns: 1fr;
             }
 
             .section-title {
                 font-size: 2.5rem;
             }
 
-            .status-timeline {
-                padding-left: 2rem;
+            .ps-grid,
+            .impact-grid,
+            .vision-features {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
-            .hero-left {
-                padding: 3rem 2rem;
+            .nav-container {
+                padding: 1rem 2rem;
+            }
+
+            section {
+                padding: 5rem 1.5rem;
             }
         }
 
         @media (max-width: 640px) {
             .hero h1 {
-                font-size: 3rem;
+                font-size: 2.8rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.3rem;
             }
 
             .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
+                gap: 2rem;
             }
 
             .section-title {
                 font-size: 2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2.5rem;
+            }
+
+            .btn {
+                padding: 1.1rem 2.5rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -801,378 +1009,239 @@
     <nav id="mainNav">
         <div class="nav-container">
             <a href="#" class="nav-logo">PassionStack</a>
-            <button class="mobile-toggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#founder">Story</a></li>
-                <li><a href="#problems">Problems</a></li>
-                <li><a href="#solution">Solution</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#status">Progress</a></li>
-                <li><a href="#contact" class="nav-cta">Contact</a></li>
-            </ul>
+            <a href="#contact" class="nav-cta">Get in Touch</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-left">
-            <h1>PassionStack</h1>
-            <p class="tagline">Education for All, Powered by Student Knowledge</p>
+    <section class="hero">
+        <div class="geometric-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">Built by Students, For Students</div>
+            <h1>Transforming <span class="highlight">Education</span> Through Collaboration</h1>
+            <p class="tagline">
+                Where knowledge meets community, and learning becomes a shared journey
+            </p>
+            <p class="description">
+                PassionStack is reimagining student learning—creating a space where quality education is accessible, collaborative, and truly student-centered.
+            </p>
             <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">1</div>
-                    <div class="stat-label">Platform</div>
+                <div class="stat-item">
+                    <span class="stat-number">Student</span>
+                    <span class="stat-label">Powered</span>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Possibilities</div>
+                <div class="stat-item">
+                    <span class="stat-number">Quality</span>
+                    <span class="stat-label">Focused</span>
                 </div>
-                <div class="stat">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Student-First</div>
+                <div class="stat-item">
+                    <span class="stat-number">Future</span>
+                    <span class="stat-label">Ready</span>
                 </div>
             </div>
         </div>
-        <div class="hero-right">
-            <p class="hero-mission">Building a platform where students learn, share knowledge, and grow together—rewarding those who contribute to making education accessible for everyone.</p>
-        </div>
+        <div class="scroll-indicator"></div>
     </section>
 
-    <!-- Founder Story -->
-    <section class="founder" id="founder">
+    <!-- Vision Section -->
+    <section class="vision">
         <div class="container">
-            <div class="section-header scroll-reveal">
-                <div class="section-number">01 — Origin</div>
-                <h2 class="section-title">Why PassionStack Exists</h2>
+            <div class="section-header reveal">
+                <span class="section-label">Our Mission</span>
+                <h2 class="section-title">Reimagining How Students Learn</h2>
+                <p class="section-subtitle">
+                    Education shouldn't be a solitary struggle. It should be a collaborative journey where every student can both teach and learn.
+                </p>
             </div>
-            <div class="story-layout">
-                <div class="story-image scroll-reveal">
-                    📖
+            <div class="vision-content reveal">
+                <div class="vision-card">
+                    <h3>Building the Future of Learning Together</h3>
+                    <p>
+                        PassionStack is more than a platform—it's a movement. We're creating a space where students share knowledge, verify quality, and grow together. Where learning is accessible to all, and every contribution is valued.
+                    </p>
                 </div>
-                <div class="story-content">
-                    <p>I'm a student, just like millions of others trying to navigate the overwhelming world of learning.</p>
-                    
-                    <p>Every day, I watched my peers struggle with the same problems I faced: scattered resources, questionable quality, wasted money on content that didn't deliver, and the constant feeling of being lost in a sea of information.</p>
-                    
-                    <p>The breaking point came when I realized that while we were all desperately searching for good study material, many of us actually had valuable knowledge to share. Some excelled in mathematics, others in programming, design, or writing. Yet there was no structured way to connect those who knew with those who needed to know.</p>
-                    
-                    <div class="pullquote">
-                        "What if students could help each other in a meaningful way? What if sharing knowledge wasn't just altruistic, but actually rewarded?"
+                <div class="vision-features">
+                    <div class="vision-feature">
+                        <div class="vision-icon">🎯</div>
+                        <h4>Student-First</h4>
+                        <p>Built by someone who lives the challenges of modern education every day</p>
                     </div>
-                    
-                    <p>That's when PassionStack was born—not from a business idea, but from a genuine need I witnessed every single day. It started as a simple thought: create a platform where students upload what they know, others verify its quality, and everyone benefits.</p>
-                    
-                    <p>The person who shares gets recognition and rewards. The person who learns gets verified, high-quality content. And the entire community grows stronger together.</p>
-                    
-                    <p>I'm building this while still studying, learning to code, designing interfaces, and figuring out how AI can help make education fairer. It's not easy, but it's necessary.</p>
-                    
-                    <p>Because every student deserves access to quality education, and every student who has knowledge deserves to be valued for sharing it. This is more than a startup. It's a mission to transform how we learn and share knowledge—one upload, one review, one connection at a time.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problems -->
-    <section class="problems" id="problems">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <div class="section-number">02 — Problems</div>
-                <h2 class="section-title">The Challenges Students Face Every Day</h2>
-            </div>
-            <div class="problems-grid">
-                <div class="problem-item scroll-reveal">
-                    <div class="problem-number">01</div>
-                    <h3>Scattered Learning Content</h3>
-                    <p>Students waste hours searching across multiple platforms, never sure if they've found everything they need or if the content is even relevant.</p>
-                </div>
-                <div class="problem-item scroll-reveal">
-                    <div class="problem-number">02</div>
-                    <h3>No Quality Verification</h3>
-                    <p>Anyone can post anything online. There's no reliable way to know if study material is accurate, complete, or worth your time before investing in it.</p>
-                </div>
-                <div class="problem-item scroll-reveal">
-                    <div class="problem-number">03</div>
-                    <h3>Wasted Money on Poor Resources</h3>
-                    <p>Students pay for courses and materials that turn out to be outdated, incomplete, or simply not helpful—with no recourse for their lost investment.</p>
-                </div>
-                <div class="problem-item scroll-reveal">
-                    <div class="problem-number">04</div>
-                    <h3>Knowledge Goes Unrewarded</h3>
-                    <p>Students who create excellent notes, tutorials, and resources have no platform to share them meaningfully or receive recognition for their efforts.</p>
-                </div>
-                <div class="problem-item scroll-reveal">
-                    <div class="problem-number">05</div>
-                    <h3>Fear of Communication & Low Confidence</h3>
-                    <p>Many students struggle with public speaking and expressing ideas. Traditional education rarely provides safe spaces to practice and build confidence through teaching others.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution -->
-    <section class="solution" id="solution">
-        <div class="container">
-            <div class="section-header scroll-reveal">
-                <div class="section-number">03 — Solution</div>
-                <h2 class="section-title">How PassionStack Changes Everything</h2>
-            </div>
-            <div class="solution-grid">
-                <div class="solution-visual scroll-reveal">
-                    💡
-                </div>
-                <div class="solution-list">
-                    <div class="solution-card scroll-reveal">
-                        <h3>Structured Content System</h3>
-                        <p>All learning materials are organized by subject, topic, and difficulty level. Students find exactly what they need without endless searching, and can follow clear learning paths curated by the community.</p>
+                    <div class="vision-feature">
+                        <div class="vision-icon">✨</div>
+                        <h4>Quality Driven</h4>
+                        <p>Community verification ensures only valuable content reaches learners</p>
                     </div>
-                    <div class="solution-card scroll-reveal">
-                        <h3>Community-Driven Quality Verification</h3>
-                        <p>Every uploaded resource goes through peer review and community ratings. Students verify each other's work, ensuring only high-quality, accurate content rises to the top.</p>
-                    </div>
-                    <div class="solution-card scroll-reveal">
-                        <h3>AI-Assisted Content Moderation</h3>
-                        <p>Our AI admin helps verify content quality, detects plagiarism, checks accuracy against reliable sources, and ensures community guidelines are maintained.</p>
-                    </div>
-                    <div class="solution-card scroll-reveal">
-                        <h3>Credit-Based Reward System</h3>
-                        <p>Students earn credits for uploading valuable content, helping others, and contributing to the community. These credits unlock premium resources, giving knowledge contributors tangible rewards.</p>
-                    </div>
-                    <div class="solution-card scroll-reveal">
-                        <h3>Knowledge Builds Confidence</h3>
-                        <p>By teaching others through uploads, answering questions, and creating tutorials, students develop communication skills and confidence naturally.</p>
+                    <div class="vision-feature">
+                        <div class="vision-icon">🚀</div>
+                        <h4>Growth Minded</h4>
+                        <p>Fostering confidence through teaching and meaningful collaboration</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features -->
-    <section class="features" id="features">
+    <!-- Problem & Solution -->
+    <section class="problem-solution">
         <div class="container">
-            <div class="section-header scroll-reveal">
-                <div class="section-number">04 — Features</div>
-                <h2 class="section-title">What Makes PassionStack Work</h2>
+            <div class="section-header reveal">
+                <span class="section-label">The Challenge & Our Approach</span>
+                <h2 class="section-title">Why PassionStack Matters</h2>
+                <p class="section-subtitle">
+                    Every great solution starts with understanding a real problem
+                </p>
             </div>
-            <div class="features-grid">
-                <div class="feature-box scroll-reveal">
-                    <div class="feature-header">Upload & Collaborate</div>
-                    <div class="feature-body">Share your notes, tutorials, summaries, and insights. Help fellow students while building your teaching portfolio and confidence.</div>
+            <div class="ps-grid">
+                <div class="ps-card reveal">
+                    <span class="ps-label">The Problem</span>
+                    <h3>Students Struggle to Find Quality Resources</h3>
+                    <p>
+                        Learning today means endless searching across platforms, spending money on uncertain quality, and having no reliable way to verify if content is truly valuable before investing time and resources.
+                    </p>
                 </div>
-                <div class="feature-box scroll-reveal">
-                    <div class="feature-header">Earn Credits from Knowledge</div>
-                    <div class="feature-body">Get rewarded for quality contributions. Use credits to access premium content created by other students and verified by the community.</div>
-                </div>
-                <div class="feature-box scroll-reveal">
-                    <div class="feature-header">AI-Powered Admin</div>
-                    <div class="feature-body">Our AI assistant helps maintain quality, provides instant feedback on uploads, and ensures the platform remains a trusted learning resource.</div>
-                </div>
-                <div class="feature-box scroll-reveal">
-                    <div class="feature-header">Premium Content Marketplace</div>
-                    <div class="feature-body">Top contributors will be able to sell specialized, in-depth content, creating genuine income opportunities from their expertise.</div>
-                </div>
-                <div class="feature-box scroll-reveal">
-                    <div class="feature-header">Learn, Share, Grow</div>
-                    <div class="feature-body">Access verified resources, contribute your knowledge, build communication skills, and grow both academically and personally in a supportive community.</div>
+                <div class="ps-card solution reveal">
+                    <span class="ps-label">Our Solution</span>
+                    <h3>Community-Powered Quality Learning</h3>
+                    <p>
+                        PassionStack brings students together to share, verify, and access quality educational content in one trusted platform—making learning more accessible, collaborative, and effective.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Status -->
-    <section class="status" id="status">
+    <!-- Impact -->
+    <section class="impact">
         <div class="container">
-            <div class="section-header scroll-reveal">
-                <div class="section-number">05 — Progress</div>
-                <h2 class="section-title">Current Status & Transparency</h2>
+            <div class="section-header reveal">
+                <span class="section-label">What Sets Us Apart</span>
+                <h2 class="section-title">The PassionStack Difference</h2>
+                <p class="section-subtitle">
+                    Built on principles that actually matter to students
+                </p>
             </div>
-            <div class="status-timeline">
-                <div class="status-milestone scroll-reveal">
-                    <h3>Solo Student Founder</h3>
-                    <p>Built by a student, for students—understanding the problems firsthand and committed to solving them authentically.</p>
+            <div class="impact-grid">
+                <div class="impact-card reveal">
+                    <span class="impact-icon">📚</span>
+                    <h3>Authentic Understanding</h3>
+                    <p>Created by a student who experiences these challenges daily—not outside observers</p>
                 </div>
-                <div class="status-milestone scroll-reveal">
-                    <h3>Building While Studying</h3>
-                    <p>Developing this platform alongside academics, learning and creating simultaneously, balancing coursework with startup development.</p>
+                <div class="impact-card reveal">
+                    <span class="impact-icon">🤝</span>
+                    <h3>Community Trust</h3>
+                    <p>Peer verification ensures content quality without gatekeeping or bureaucracy</p>
                 </div>
-                <div class="status-milestone scroll-reveal">
-                    <h3>Core Screens Completed</h3>
-                    <p>Main interface designs finalized, user flows mapped and validated through student feedback and usability testing.</p>
-                </div>
-                <div class="status-milestone scroll-reveal">
-                    <h3>AI Prototype Ready</h3>
-                    <p>Intelligent content moderation and quality verification system functional, with machine learning models trained and tested.</p>
-                </div>
-                <div class="status-milestone scroll-reveal">
-                    <h3>Beta Launch Planned</h3>
-                    <p>Currently preparing for initial testing with select student groups, refining features based on early feedback and iterations.</p>
+                <div class="impact-card reveal">
+                    <span class="impact-icon">💡</span>
+                    <h3>Meaningful Growth</h3>
+                    <p>Teaching builds confidence—turning learners into educators and contributors</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Demo -->
-    <section class="demo" id="demo">
+    <!-- Journey -->
+    <section class="journey">
         <div class="container">
-            <div class="section-header scroll-reveal">
-                <div class="section-number" style="color: white;">06 — Demo</div>
-                <h2 class="section-title">See PassionStack in Action</h2>
+            <div class="section-header reveal">
+                <span class="section-label">Our Story</span>
+                <h2 class="section-title">The Journey So Far</h2>
             </div>
-            <div class="demo-container scroll-reveal">
-                <h3>Prototype Demo – Coming Soon</h3>
-                <p>We're finalizing the beta version for our first user testing group. Check back soon for a live demonstration of the platform.</p>
+            <div class="journey-content reveal">
+                <p class="journey-quote">
+                    Students want to help each other learn, but lack the right platform to do so effectively
+                </p>
+                <p class="journey-text">
+                    PassionStack began with a simple realization: the knowledge students need already exists within the student community itself. What's missing is a structured, trusted way to share it.
+                </p>
+                <p class="journey-text">
+                    As a student founder, I'm building this platform while learning and studying—understanding firsthand what students need and creating solutions that actually work. It's not easy balancing development with coursework, but it's necessary. Every student deserves access to quality education.
+                </p>
+                <div style="text-align: center;">
+                    <span class="journey-status">Currently in Development</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
         <div class="container">
-            <div class="section-header scroll-reveal">
-                <div class="section-number">07 — Connect</div>
-                <h2 class="section-title">Let's Talk</h2>
+            <h2>Let's Build the Future Together</h2>
+            <p>
+                Interested in PassionStack? Whether you want to collaborate, provide feedback, or simply learn more about our vision for education—let's connect.
+            </p>
+            <div class="cta-buttons">
+                <a href="mailto:parikhshlok@gmail.com" class="btn btn-primary">
+                    <span>Send an Email</span>
+                    <span>→</span>
+                </a>
+                <a href="https://www.linkedin.com/in/shlok-parikh-862b7b275" target="_blank" class="btn btn-outline">
+                    <span>Connect on LinkedIn</span>
+                    <span>↗</span>
+                </a>
             </div>
-            <div class="contact-layout">
-                <div class="contact-box scroll-reveal">
-                    <div class="contact-label">Email</div>
-                    <div class="contact-value"><a href="mailto:contact@passionstack.com">contact@passionstack.com</a></div>
-                </div>
-                <div class="contact-box scroll-reveal">
-                    <div class="contact-label">Phone</div>
-                    <div class="contact-value"><a href="tel:+919876543210">+91 98765 43210</a></div>
-                </div>
-                <div class="contact-box scroll-reveal">
-                    <div class="contact-label">LinkedIn</div>
-                    <div class="contact-value"><a href="https://linkedin.com/in/passionstack" target="_blank">linkedin.com/in/passionstack</a></div>
-                </div>
-            </div>
-            <div class="qr-section scroll-reveal">
-                <h3 style="margin-bottom: 2rem; color: rgba(255,255,255,0.9); font-family: 'DM Serif Display', serif; font-size: 1.8rem;">Share Your Feedback</h3>
-                <div class="qr-wrapper">
-                    <div class="qr-code">
-                        QR Code<br><br>Scan to access<br>feedback form
-                    </div>
-                </div>
-                <p class="qr-caption">Your insights help us build better</p>
-            </div>
-            <p class="closing">Let's build the future of learning together.</p>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">PassionStack</div>
+        <p>Education for All, Powered by Student Knowledge</p>
+        <div class="footer-divider"></div>
+        <div class="footer-links">
+            <a href="mailto:parikhshlok@gmail.com">parikhshlok@gmail.com</a>
+            <span style="color: rgba(255,255,255,0.3);">•</span>
+            <a href="tel:+918155984270">+91 81559 84270</a>
+        </div>
+        <p style="font-size: 0.9rem; opacity: 0.6; margin-top: 2rem;">
+            Built with passion by a student, for students everywhere
+        </p>
+    </footer>
 
     <script>
-        // Mobile menu toggle
-        const mobileToggle = document.querySelector('.mobile-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileToggle.addEventListener('click', () => {
-            mobileToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetSection = document.querySelector(targetId);
-                const navHeight = 70;
-                const targetPosition = targetSection.offsetTop - navHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Active navigation state on scroll
-        const sections = document.querySelectorAll('section[id]');
-        const navItems = document.querySelectorAll('.nav-links a');
-
-        function updateActiveNav() {
-            const scrollPosition = window.scrollY + 100;
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    navItems.forEach(item => {
-                        item.classList.remove('active');
-                        if (item.getAttribute('href') === `#${sectionId}`) {
-                            item.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }
-
-        window.addEventListener('scroll', updateActiveNav);
-        updateActiveNav(); // Initial call
-
-        // Hide/show navigation on scroll
-        let lastScroll = 0;
+        // Navigation scroll effect
         const nav = document.getElementById('mainNav');
-
         window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll <= 70) {
-                nav.classList.remove('hidden');
-            } else if (currentScroll > lastScroll && currentScroll > 200) {
-                nav.classList.add('hidden');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
             } else {
-                nav.classList.remove('hidden');
+                nav.classList.remove('scrolled');
             }
-
-            lastScroll = currentScroll;
         });
 
         // Scroll reveal animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
+        const reveals = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
                 }
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-reveal').forEach(el => {
-            observer.observe(el);
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
         });
 
-        // Stagger animations
-        const staggerGroups = [
-            '.problem-item',
-            '.solution-card',
-            '.feature-box',
-            '.status-milestone',
-            '.contact-box'
-        ];
+        reveals.forEach(reveal => {
+            revealObserver.observe(reveal);
+        });
 
-        staggerGroups.forEach(selector => {
-            document.querySelectorAll(selector).forEach((el, index) => {
-                el.style.transitionDelay = `${index * 0.1}s`;
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>
